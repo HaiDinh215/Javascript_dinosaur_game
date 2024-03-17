@@ -19,3 +19,14 @@ var checkDead = setInterval(function(){
         alert("u lose.");
     }
 },10);
+
+document.getElementById('gameContainer').addEventListener('click', function() {
+    jump();
+});
+  
+document.addEventListener('keydown', function(event) {
+    if (event.key === ' ' || event.key === 'Spacebar') {
+        event.preventDefault(); // Prevent scrolling the page
+        jump();
+    }
+});
