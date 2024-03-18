@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprite Sheet Example</title>
+<style>
+    #sprite {
+        width: 80.8px; /* Width of each sprite */
+        height: 81px; /* Height of each sprite */
+        background-image: url('mario-sprites.png'); /* URL of your sprite sheet */
+        background-repeat: no-repeat;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<div id="sprite"></div>
+
+<script>
+    // Define sprite coordinates
+    const spriteWidth = 80.8; // Width of each sprite
+    const spriteHeight = 81; // Height of each sprite
+    const spriteSheetColumns = 8; // Number of columns in the sprite sheet
+    const spriteSheetRows = 5; // Number of rows in the sprite sheet
+
+    // Calculate total number of sprites
+    const totalSprites = spriteSheetColumns * spriteSheetRows;
+
+    // Function to set the background position of the sprite
+    function setSpritePosition(spriteIndex) {
+        const row = Math.floor(spriteIndex / spriteSheetColumns);
+        const col = spriteIndex % spriteSheetColumns;
+        const x = -col * spriteWidth;
+        const y = -row * spriteHeight;
+        document.getElementById('sprite').style.backgroundPosition = `${x}px ${y}px`;
+    }
+
+    // Example: Displaying sprite at index 5
+    setSpritePosition(0);
+    setSpritePosition(1);
+    setSpritePosition(2);
+    setSpritePosition(3);
+    setSpritePosition(4);
+    setSpritePosition(5);
+    setSpritePosition(6);
+    setSpritePosition(7);
+</script>
+
+</body>
+</html>

@@ -44,3 +44,12 @@
     0%{left:480px;}
     100%{left:-40px;}
 }
+
+/* Mario character */
+#sprite {
+    width: 80.8px; /* Width of each sprite */
+    height: 81px; /* Height of each sprite */
+    background-image: url('mario-sprites.png'); /* URL of your sprite sheet */
+    background-repeat: no-repeat;
+    position: absolute;
+}

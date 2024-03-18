@@ -1,4 +1,6 @@
-var character = document.getElementById("character");
+// var character = document.getElementById("character");
+var character = document.getElementById("sprite");
+
 var block = document.getElementById("block");
 function jump(){
     if(character.classList != "animate"){
@@ -30,3 +32,25 @@ document.addEventListener('keydown', function(event) {
         jump();
     }
 });
+
+// *** Displaying Mario ***
+// Define sprite coordinates
+const spriteWidth = 80.8; // Width of each sprite
+const spriteHeight = 81; // Height of each sprite
+const spriteSheetColumns = 8; // Number of columns in the sprite sheet
+const spriteSheetRows = 5; // Number of rows in the sprite sheet
+
+// Calculate total number of sprites
+const totalSprites = spriteSheetColumns * spriteSheetRows;
+
+// Function to set the background position of the sprite
+function setSpritePosition(spriteIndex) {
+    const row = Math.floor(spriteIndex / spriteSheetColumns);
+    const col = spriteIndex % spriteSheetColumns;
+    const x = -col * spriteWidth;
+    const y = -row * spriteHeight;
+    document.getElementById('sprite').style.backgroundPosition = `${x}px ${y}px`;
+}
+
+// Example: Displaying sprite at index 5
+setSpritePosition(0);
