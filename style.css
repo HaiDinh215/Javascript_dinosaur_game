@@ -26,17 +26,17 @@
     animation: jump 500ms;
 }
 @keyframes jump {
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 100px;}
+    30%{top: 70px;}
+    70%{top: 80px;}
+    100%{top: 100px;}
 }
 #block{
     width: 20px;
     height: 20px;
     background-color: blue;
     position: relative;
-    top: 130px;
+    top: 180px;
     left: 480px;
     animation: block 1s infinite linear;
 }
@@ -47,8 +47,9 @@
 
 /* Mario character */
 #sprite {
-    width: 80.8px; /* Width of each sprite */
-    height: 81px; /* Height of each sprite */
+    width: 60px; /* Width of each sprite */
+    height: 77px; /* Height of each sprite */
+    top: 124px;
     background-image: url('mario-sprites.png'); /* URL of your sprite sheet */
     background-repeat: no-repeat;
     position: absolute;
