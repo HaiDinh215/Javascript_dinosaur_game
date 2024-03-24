@@ -13,6 +13,8 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 100%);
+    background-image: url("background_01.png");
+    background-size: contain;
 }
 #character{
     width: 20px;
@@ -25,10 +27,12 @@
 .animate{
     animation: jump 500ms;
 }
+
+/* On each phases of animation add 'margin top' of size */
 @keyframes jump {
     0%{top: 100px;}
-    30%{top: 70px;}
-    70%{top: 80px;}
+    30%{top: 80px;}
+    70%{top: 90px;}
     100%{top: 100px;}
 }
 #block{
