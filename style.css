@@ -6,55 +6,50 @@
     position: relative;
 }
 #game{
-    width: 500px;
-    height: 200px;
+    width: 60%;
+    height: 500px;
     border: 1px solid black;
     /* Position stylings */
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 100%);
+    transform: translate(-50%, 20%);
     background-image: url("background_01.png");
     background-size: contain;
-}
-#character{
-    width: 20px;
-    height: 50px;
-    background-color: red;
-    position: relative;
-    top: 150px;
 }
 /* add animation 'jump' - added and remove as desire to 'character' using javascript */
 .animate{
     animation: jump 500ms;
 }
 
-/* On each phases of animation add 'margin top' of size */
-@keyframes jump {
-    0%{top: 100px;}
-    30%{top: 80px;}
-    70%{top: 90px;}
-    100%{top: 100px;}
-}
-#block{
-    width: 20px;
-    height: 20px;
-    background-color: blue;
-    position: relative;
-    top: 180px;
-    left: 480px;
-    animation: block 1s infinite linear;
-}
-@keyframes block{
-    0%{left:480px;}
-    100%{left:-40px;}
-}
-
 /* Mario character */
 #sprite {
     width: 60px; /* Width of each sprite */
     height: 77px; /* Height of each sprite */
-    top: 124px;
+    top: 424px;
     background-image: url('mario-sprites.png'); /* URL of your sprite sheet */
     background-repeat: no-repeat;
     position: absolute;
 }
+
+/* On each phases of animation add 'margin top' of size */
+@keyframes jump {
+    0%{top: 400px;}
+    30%{top: 380px;}
+    70%{top: 390px;}
+    100%{top: 400px;}
+}
+#block{
+    width: 34px;
+    height: 36px;
+    /* background-color: blue; */
+    position: relative;
+    top: 466px;
+    left: 480px;
+    background-image: url('mario_enemy_koopa_shell.png');
+    animation: block 1s infinite linear;
+}
+@keyframes block{
+    0%{left:900px;}
+    100%{left:0px;}
+}
+
