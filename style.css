@@ -48,6 +48,8 @@
     background-image: url('mario_enemy_koopa_shell.png');
     animation: block 1s infinite linear;
 }
+
+/* change left position of the element through each time interval */
 @keyframes block{
     0%{left:900px;}
     10%{left:810px;}
