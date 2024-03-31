@@ -52,6 +52,31 @@ function setSpritePosition(spriteIndex) {
     document.getElementById('sprite').style.backgroundPosition = `${x}px ${y}px`;
 }
 
-// Example: Displaying sprite at index 5
+// Displaying sprite at index 24
 setSpritePosition(24);
-// setSpritePosition(1);
+
+// detect block reach off screen
+var count = 0;
+var yourScore = document.getElementById('yourScore');
+
+  // Function to check left position of the target div
+  function checkLeftPosition() {
+    var targetDiv = document.getElementById('block');
+    var leftPosition = targetDiv.offsetLeft;
+
+    if (leftPosition <= 15) {
+      count++;
+    //   console.log(count);
+      yourScore.innerHTML = count * 10;
+
+      // Perform any action you want when the left position reaches 0
+    }
+  }
+
+  // Function to continuously check left position
+  function detectLeftPosition() {
+    setInterval(checkLeftPosition, 200); // Check every 100 milliseconds
+  }
+
+  // Start detecting left position
+  detectLeftPosition();

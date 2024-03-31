@@ -12,7 +12,7 @@
     /* Position stylings */
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 5%);
     background-image: url("background_01.png");
     background-size: contain;
 }
@@ -44,12 +44,26 @@
     /* background-color: blue; */
     position: relative;
     top: 466px;
-    left: 480px;
+    /* left: 480px; */
     background-image: url('mario_enemy_koopa_shell.png');
     animation: block 1s infinite linear;
 }
 @keyframes block{
     0%{left:900px;}
+    10%{left:810px;}
+    20%{left:720px;}
+    30%{left:630px;}
+    40%{left:540px;}
+    50%{left:450px;}
+    60%{left:360px;}
+    70%{left:270px;}
+    80%{left:120px;}
+    90%{left:30px;}
     100%{left:0px;}
 }
 
+/* Scoreboard */
+#scoreBoard{
+    margin-top: 50px;
+    text-align: center;
+}
