@@ -5,6 +5,17 @@
 #gameContainer{
     position: relative;
 }
+
+/* Infinity background animation */
+@keyframes slide {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-1024px); /* The image width */
+    }
+}
+
 #game{
     width: 60%;
     height: 500px;
@@ -13,9 +24,17 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 5%);
-    background-image: url("background_01.png");
-    background-size: contain;
+    overflow: hidden;
 }
+
+#background{
+    background: url("background_01.png") repeat-x;
+    width: 3072px;
+    height: 500px;
+    background-size: contain; 
+    animation: slide 3s linear infinite;
+}
+
 /* add animation 'jump' - added and remove as desire to 'character' using javascript */
 .animate{
     animation: jump 500ms;
