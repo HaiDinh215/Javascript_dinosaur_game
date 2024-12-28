@@ -41,7 +41,7 @@
 }
 
 /* Mario character */
-#sprite {
+#character {
     width: 60px; /* Width of each sprite */
     height: 77px; /* Height of each sprite */
     position: fixed;

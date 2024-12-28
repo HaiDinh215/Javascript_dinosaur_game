@@ -1,5 +1,4 @@
-// var character = document.getElementById("character");
-var character = document.getElementById("sprite");
+var character = document.getElementById("character");
 
 var block = document.getElementById("block");
 var computedStyle = window.getComputedStyle(block);
@@ -52,7 +51,7 @@ function setSpritePosition(spriteIndex) {
   const col = spriteIndex % spriteSheetColumns;
   const x = -col * spriteWidth;
   const y = -row * spriteHeight;
-  document.getElementById('sprite').style.backgroundPosition = `${x}px ${y}px`;
+  document.getElementById('character').style.backgroundPosition = `${x}px ${y}px`;
 }
 
 // Displaying sprite at index 24
