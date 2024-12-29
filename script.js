@@ -1,39 +1,41 @@
-var character = document.getElementById("character");
-
-var block = document.getElementById("block");
+var character = document.getElementById("character"); // Referencing 'character' element
+var block = document.getElementById("block"); // Referencing 'block' element
 var computedStyle = window.getComputedStyle(block);
 
+/**
+ * Make the character 'jump' to dodge the 'block'
+ */
 function jump(){
-  if(character.classList != "animate"){
+  if(character.classList != "animate"){ // Determine to add 'animate' class to 'character'
     character.classList.add("animate");
   }
-  setTimeout(function(){
+  setTimeout(function(){ // Remove 'animate' class after 500ms
     character.classList.remove("animate");
   },500);
 }
-
-// Detect 'character' intersect with 'block'
-var checkDead = setInterval(function(){
-  var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-  var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-
-  if(blockLeft<60 && blockLeft>0 && characterTop>=400){
-    block.style.animation = "none";
-    block.style.display = "none";
-    alert("Game Over!");
-  }
-},10);
-
+// Call 'jump' function on click event
 document.getElementById('gameContainer').addEventListener('click', function() {
   jump();
 });
-  
+// Call 'jump' function on pressing 'Space' key
 document.addEventListener('keydown', function(event) {
   if (event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault(); // Prevent scrolling the page
     jump();
   }
 });
+
+// Detect 'character' intersect with 'block'
+// var checkDead = setInterval(function(){
+//   var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // Get 'top' value of element (num of pixel from top of screen to top of element)
+//   var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); // Get 'left' value of element (num of pixel from left of screen to left of element)
+
+//   if(blockLeft<60 && blockLeft>=30 && characterTop>=400){ // Elements intersect -> Game Over
+//     block.style.animation = "none";
+//     block.style.display = "none";
+//     alert("Game Over!");
+//   }
+// },10);
 
 // *** Displaying Mario ***
 // Define sprite coordinates
@@ -57,45 +59,49 @@ function setSpritePosition(spriteIndex) {
 // Displaying sprite at index 24
 setSpritePosition(24);
 
-// Check block display status
-function checkBlockDisplayStat(){
-  var blockDisplayStat = computedStyle.display;
-  return blockDisplayStat;
-}
 
 
-//*** Detect block reach off screen ***
-var count = 0;
-var yourScore = document.getElementById('yourScore');
-// var targetDiv = document.getElementById('block');
 
-// Function to check left position of the 'block'
-function checkLeftPosition() {
-  var leftPosition = block.offsetLeft;
-  // If/else statement to detect 'block' approching left edge of 'game' screen
-  if (leftPosition <= 15) {
-    // Increment 'count' value by 1 and use formula to calculate current score
-    count++;
-    yourScore.innerHTML = count * 10;
-  }
-}
 
-// Function to continuously check left position
-function detectLeftPosition() {
-  if(computedStyle.display != 'none'){
-    setInterval(checkLeftPosition, 200); // Check every 200 milliseconds
-    console.log(computedStyle.display);
-    // return;
-  }
-  console.log(computedStyle.display);
+// // Check block display status
+// function checkBlockDisplayStat(){
+//   var blockDisplayStat = computedStyle.display;
+//   return blockDisplayStat;
+// }
 
-  // else if(computedStyle.display === 'none'){
-    // return;
-    //setInterval(checkLeftPosition, 200); // Check every 200 milliseconds
-  // }
-}
 
-// Start detecting left position
-detectLeftPosition();
+// //*** Detect block reach off screen ***
+// var count = 0;
+// var yourScore = document.getElementById('yourScore');
+// // var targetDiv = document.getElementById('block');
+
+// // Function to check left position of the 'block'
+// function checkLeftPosition() {
+//   var leftPosition = block.offsetLeft;
+//   // If/else statement to detect 'block' approching left edge of 'game' screen
+//   if (leftPosition <= 15) {
+//     // Increment 'count' value by 1 and use formula to calculate current score
+//     count++;
+//     yourScore.innerHTML = count * 10;
+//   }
+// }
+
+// // Function to continuously check left position
+// function detectLeftPosition() {
+//   if(computedStyle.display != 'none'){
+//     setInterval(checkLeftPosition, 200); // Check every 200 milliseconds
+//     console.log(computedStyle.display);
+//     // return;
+//   }
+//   console.log(computedStyle.display);
+
+//   // else if(computedStyle.display === 'none'){
+//     // return;
+//     //setInterval(checkLeftPosition, 200); // Check every 200 milliseconds
+//   // }
+// }
+
+// // Start detecting left position
+// detectLeftPosition();
 
 
