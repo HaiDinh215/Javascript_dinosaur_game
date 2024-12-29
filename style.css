@@ -15,6 +15,13 @@
         transform: translate(-1024px); /* The image width */
     }
 }
+#background{
+    background: url("background_01.png") repeat-x;
+    width: 3072px;
+    height: 500px;
+    background-size: contain; 
+    animation: slide 3s linear infinite;
+}
 
 #game{
     width: 60%;
@@ -25,19 +32,6 @@
     left: 50%;
     transform: translate(-50%, 5%);
     overflow: hidden;
-}
-
-#background{
-    background: url("background_01.png") repeat-x;
-    width: 3072px;
-    height: 500px;
-    background-size: contain; 
-    animation: slide 3s linear infinite;
-}
-
-/* add animation 'jump' - added and remove as desire to 'character' using javascript */
-.animate{
-    animation: jump 500ms;
 }
 
 /* Mario character */
@@ -57,15 +51,9 @@
     70%{top: 390px;}
     100%{top: 400px;}
 }
-#block{
-    width: 34px;
-    height: 36px;
-    /* background-color: blue; */
-    position: relative;
-    top: 466px;
-    /* left: 480px; */
-    background-image: url('mario_enemy_koopa_shell.png');
-    animation: block 1s infinite linear;
+/* add animation 'jump' - added and remove as desire to 'character' using javascript */
+.animate{
+    animation: jump 500ms;
 }
 
 /* change left position of the element through each time interval */
@@ -81,6 +69,14 @@
     80%{left:120px;}
     90%{left:30px;}
     100%{left:0px;}
+}
+#block{
+    width: 34px;
+    height: 36px;
+    position: relative;
+    top: 466px;
+    background-image: url('mario_enemy_koopa_shell.png');
+    animation: block 3s linear infinite;
 }
 
 /* Scoreboard */
