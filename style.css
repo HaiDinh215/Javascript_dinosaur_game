@@ -12,20 +12,20 @@
         transform: translate(0);
     }
     100% {
-        transform: translate(-1024px); /* The image width */
+        transform: translate(-727px); /* The image width */
     }
 }
 #background{
-    background: url("background_01.png") repeat-x;
-    width: 3072px;
-    height: 500px;
+    background: url("background_01_cus.png") repeat-x;
+    width: 3635px;
+    height: 613px;
     background-size: contain; 
     animation: slide 3s linear infinite;
 }
 
 #game{
     width: 60%;
-    height: 500px;
+    height: 613px;
     border: 1px solid black;
     /* Position stylings */
     position: absolute;
@@ -39,17 +39,17 @@
     width: 60px; /* Width of each sprite */
     height: 77px; /* Height of each sprite */
     position: fixed;
-    top: 424px; /* Distance from the top of the viewport */
+    top: 537px; /* Distance from the top of the viewport */
     background-image: url('mario-sprites.png'); /* URL of your sprite sheet */
     background-repeat: no-repeat;
 }
 
 /* On each phases of animation add 'margin top' of size */
 @keyframes jump {
-    0%{top: 400px;}
-    30%{top: 380px;}
-    70%{top: 390px;}
-    100%{top: 400px;}
+    0%{top: 513px;}
+    30%{top: 493px;}
+    70%{top: 503px;}
+    100%{top: 513px;}
 }
 /* add animation 'jump' - added and remove as desire to 'character' using javascript */
 .animate{
@@ -74,7 +74,7 @@
     width: 34px;
     height: 36px;
     position: relative;
-    top: 466px;
+    top: 579px;
     background-image: url('mario_enemy_koopa_shell.png');
     animation: block 3s linear infinite;
 }
