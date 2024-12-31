@@ -2,42 +2,7 @@ var character = document.getElementById("character"); // Referencing 'character'
 var block = document.getElementById("block"); // Referencing 'block' element
 var computedStyle = window.getComputedStyle(block);
 
-/**
- * Make the character 'jump' to dodge the 'block'
- */
-function jump(){
-  if(character.classList != "animate"){ // Determine to add 'animate' class to 'character'
-    character.classList.add("animate");
-  }
-  setTimeout(function(){ // Remove 'animate' class after 500ms
-    character.classList.remove("animate");
-  },500);
-}
-// Call 'jump' function on click event
-document.getElementById('gameContainer').addEventListener('click', function() {
-  jump();
-});
-// Call 'jump' function on pressing 'Space' key
-document.addEventListener('keydown', function(event) {
-  if (event.key === ' ' || event.key === 'Spacebar') {
-    event.preventDefault(); // Prevent scrolling the page
-    jump();
-  }
-});
-
-// Detect 'character' intersect with 'block'
-// var checkDead = setInterval(function(){
-//   var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // Get 'top' value of element (num of pixel from top of screen to top of element)
-//   var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); // Get 'left' value of element (num of pixel from left of screen to left of element)
-
-//   if(blockLeft<60 && blockLeft>=30 && characterTop>=400){ // Elements intersect -> Game Over
-//     block.style.animation = "none";
-//     block.style.display = "none";
-//     alert("Game Over!");
-//   }
-// },10);
-
-// *** Displaying Mario ***
+// *** Determine character to display from spritesheet ***
 // Define sprite coordinates
 const spriteWidth = 80.8; // Width of each sprite
 const spriteHeight = 81; // Height of each sprite
@@ -53,15 +18,33 @@ function setSpritePosition(spriteIndex) {
   const col = spriteIndex % spriteSheetColumns;
   const x = -col * spriteWidth;
   const y = -row * spriteHeight;
-  document.getElementById('character').style.backgroundPosition = `${x}px ${y}px`;
+  // character.style.backgroundPosition = `${x}px ${y}px`;
+  character.style.backgroundPosition = `${x}px ${y}px`;
 }
 
-// Displaying sprite at index 24
-setSpritePosition(24);
+/**
+ * Make the character 'jump' to dodge the 'block'
+ */
+function jump(){
+  if(character.classList != "animate"){ // Determine to add 'animate' class to 'character'
+    character.classList.add("animate");
+  }
+  setTimeout(function(){ // Remove 'animate' class after 500ms
+    character.classList.remove("animate");
+  },500);
+}
 
+// Detect 'character' intersect with 'block'
+// var checkDead = setInterval(function(){
+//   var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // Get 'top' value of element (num of pixel from top of screen to top of element)
+//   var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); // Get 'left' value of element (num of pixel from left of screen to left of element)
 
-
-
+//   if(blockLeft<60 && blockLeft>=30 && characterTop>=400){ // Elements intersect -> Game Over
+//     block.style.animation = "none";
+//     block.style.display = "none";
+//     alert("Game Over!");
+//   }
+// },10);
 
 // // Check block display status
 // function checkBlockDisplayStat(){
