@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <div id="gameContainer">
@@ -18,11 +17,27 @@
                 <div id="block"></div>
             </div>
             <div id="character"></div><!-- Mario character -->
-
+            <script>
+                // Set sprite character on page load
+                window.addEventListener('load', function() {
+                    // Displaying sprite at index 24
+                    setSpritePosition(24);
+                });
+                
+                // Call 'jump' function on click event
+                document.getElementById('gameContainer').addEventListener('click', function() {
+                    jump();
+                });
+                // Call 'jump' function on pressing 'Space' key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === ' ' || event.key === 'Spacebar') {
+                        event.preventDefault(); // Prevent scrolling the page
+                        jump();
+                    }
+                });
+            </script>
         </div>
     </div>
-
-
 </body>
-<script src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </html>
