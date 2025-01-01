@@ -22,6 +22,8 @@
                 window.addEventListener('load', function() {
                     // Displaying sprite at index 24
                     setSpritePosition(24);
+                    // Call 'checkDead' function every 5ms
+                    setInterval(checkDead, 5);
                 });
                 
                 // Call 'jump' function on click event
