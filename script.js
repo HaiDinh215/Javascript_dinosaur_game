@@ -18,7 +18,6 @@ function setSpritePosition(spriteIndex) {
   const col = spriteIndex % spriteSheetColumns;
   const x = -col * spriteWidth;
   const y = -row * spriteHeight;
-  // character.style.backgroundPosition = `${x}px ${y}px`;
   character.style.backgroundPosition = `${x}px ${y}px`;
 }
 
@@ -35,16 +34,21 @@ function jump(){
 }
 
 // Detect 'character' intersect with 'block'
-// var checkDead = setInterval(function(){
-//   var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // Get 'top' value of element (num of pixel from top of screen to top of element)
-//   var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); // Get 'left' value of element (num of pixel from left of screen to left of element)
+function checkDead(){
+  var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top")); // Get 'top' value of element (num of pixel from top of screen to top of element)
+  var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left")); // Get 'left' value of element (num of pixel from left of screen to left of element)
 
-//   if(blockLeft<60 && blockLeft>=30 && characterTop>=400){ // Elements intersect -> Game Over
-//     block.style.animation = "none";
-//     block.style.display = "none";
-//     alert("Game Over!");
-//   }
-// },10);
+  if(
+      blockLeft<=60 || 
+      // blockLeft>=30 && 
+      characterTop>=538
+    )
+  { // Elements intersect -> Game Over
+    // block.style.animation = "none";
+    // block.style.display = "none";
+    alert("Game Over!");
+  }
+}
 
 // // Check block display status
 // function checkBlockDisplayStat(){
