@@ -73,7 +73,7 @@
 #block{
     width: 34px;
     height: 36px;
-    position: relative;
+    position: fixed;
     top: 579px;
     background-image: url('mario_enemy_koopa_shell.png');
     animation: block 3s linear infinite;
